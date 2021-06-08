@@ -25,7 +25,6 @@ public class tests {
 		
 		Jautajumi[] jautajums = {
 				new Jautajumi(jaut1, "A"),
-				new Jautajumi(jaut1, "a"),
 				new Jautajumi(jaut2, "A"),
 				new Jautajumi(jaut3, "A"),
 				new Jautajumi(jaut4, "A"),
