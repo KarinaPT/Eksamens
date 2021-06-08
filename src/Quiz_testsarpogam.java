@@ -70,7 +70,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		textfield.setBounds(0,0,600,50);
 		textfield.setBackground(new Color(187,160,200));
-		textfield.setForeground(new Color(255,255,255));
+		textfield.setForeground(new Color(50,50,3));
 		textfield.setFont(new Font("Serif",Font.ITALIC,26));
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
@@ -90,7 +90,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		PogaA.setBounds(0,100,100,100);
 		PogaA.setFont(new Font("Serif",Font.ITALIC,50));
 		PogaA.setBackground(new Color(187,160,190));
-		PogaA.setForeground(new Color(255,255,255));
+		PogaA.setForeground(new Color(50,50,3));
 		PogaA.setBorder(BorderFactory.createBevelBorder(1));
 		PogaA.setFocusable(false);
 		PogaA.addActionListener(this);
@@ -108,7 +108,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		PogaC.setBounds(0,320,100,100);
 		PogaC.setFont(new Font("Serif",Font.ITALIC,50));
 		PogaC.setBackground(new Color(187,160,190));
-		PogaC.setForeground(new Color(255,255,255));
+		PogaC.setForeground(new Color(50,50,3));
 		PogaC.setBorder(BorderFactory.createBevelBorder(1));
 		PogaC.setFocusable(false);
 		PogaC.addActionListener(this);
@@ -123,6 +123,30 @@ public class Quiz_testsarpogam implements ActionListener{
 		PogaD.addActionListener(this);
 		PogaD.setText("D");
 		
+		AtbildeA.setBounds(110,100,300,100);
+		AtbildeA.setBackground(new Color(187,160,190));
+		AtbildeA.setForeground(new Color(255,255,255));
+		AtbildeA.setFont(new Font("Serif",Font.ITALIC,30));
+		AtbildeA.setText("Atbilde");
+		
+		AtbildeB.setBounds(110,210,300,100);
+		AtbildeB.setBackground(new Color(187,160,190));
+		AtbildeB.setForeground(new Color(50,50,3));
+		AtbildeB.setFont(new Font("Serif",Font.ITALIC,30));
+		AtbildeB.setText("Atbilde");
+		
+		AtbildeC.setBounds(110,320,300,100);
+		AtbildeC.setBackground(new Color(187,160,190));
+		AtbildeC.setForeground(new Color(255,255,255));
+		AtbildeC.setFont(new Font("Serif",Font.ITALIC,30));
+		AtbildeC.setText("Atbilde");
+		
+		AtbildeD.setBounds(110,430,300,100);
+		AtbildeD.setBackground(new Color(187,160,190));
+		AtbildeD.setForeground(new Color(50,50,3));
+		AtbildeD.setFont(new Font("Serif",Font.ITALIC,30));
+		AtbildeD.setText("Atbilde");
+		
 		
 		
 		frame.add(textfield);
@@ -131,6 +155,10 @@ public class Quiz_testsarpogam implements ActionListener{
 		frame.add(PogaB);
 		frame.add(PogaC);
 		frame.add(PogaD);
+		frame.add(AtbildeB);
+		frame.add(AtbildeA);
+		frame.add(AtbildeC);
+		frame.add(AtbildeD);
 		frame.setVisible(true);
 		
 		
