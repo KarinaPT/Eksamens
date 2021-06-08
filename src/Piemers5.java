@@ -7,6 +7,7 @@ public class Piemers5 {
 		int salidzinat;
 		salidzinat = vards1.compareToIgnoreCase(vards2);
 		System.out.println("Rezultats: "+salidzinat);
+		
 	}
 
 }
