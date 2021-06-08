@@ -69,7 +69,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		frame.setResizable(false);
 		
 		textfield.setBounds(0,0,600,50);
-		textfield.setBackground(new Color(187,160,190));
+		textfield.setBackground(new Color(187,160,200));
 		textfield.setForeground(new Color(255,255,255));
 		textfield.setFont(new Font("Serif",Font.ITALIC,26));
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
@@ -77,7 +77,19 @@ public class Quiz_testsarpogam implements ActionListener{
 		textfield.setEditable(false);
 		textfield.setText("Text");
 		
+		textarea.setBounds(0,50,600,40);
+		textarea.setLineWrap(true);
+		textarea.setWrapStyleWord(true);
+		textarea.setBackground(new Color(187,160,190));
+		textarea.setForeground(new Color(255,255,255));
+		textarea.setFont(new Font("Serif",Font.ITALIC,26));
+		textarea.setBorder(BorderFactory.createBevelBorder(1));
+		textarea.setEditable(false);
+		textarea.setText("Jautajumi");
+		
+		
 		frame.add(textfield);
+		frame.add(textarea);
 		frame.setVisible(true);
 		
 		
