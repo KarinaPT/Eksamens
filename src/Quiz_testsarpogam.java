@@ -63,7 +63,7 @@ public class Quiz_testsarpogam implements ActionListener{
 
 	public Quiz_testsarpogam(){
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(600,600);
+		frame.setSize(600,575);
 		frame.getContentPane().setBackground(new Color(187,157,177));
 		frame.setLayout(null);
 		frame.setResizable(false);
@@ -82,14 +82,55 @@ public class Quiz_testsarpogam implements ActionListener{
 		textarea.setWrapStyleWord(true);
 		textarea.setBackground(new Color(187,160,190));
 		textarea.setForeground(new Color(255,255,255));
-		textarea.setFont(new Font("Serif",Font.ITALIC,26));
+		textarea.setFont(new Font("Serif",Font.ITALIC,24));
 		textarea.setBorder(BorderFactory.createBevelBorder(1));
 		textarea.setEditable(false);
 		textarea.setText("Jautajumi");
 		
+		PogaA.setBounds(0,100,100,100);
+		PogaA.setFont(new Font("Serif",Font.ITALIC,50));
+		PogaA.setBackground(new Color(187,160,190));
+		PogaA.setForeground(new Color(255,255,255));
+		PogaA.setBorder(BorderFactory.createBevelBorder(1));
+		PogaA.setFocusable(false);
+		PogaA.addActionListener(this);
+		PogaA.setText("A");
+		
+		PogaB.setBounds(0,210,100,100);
+		PogaB.setFont(new Font("Serif",Font.ITALIC,50));
+		PogaB.setBackground(new Color(187,160,190));
+		PogaB.setForeground(new Color(255,255,255));
+		PogaB.setBorder(BorderFactory.createBevelBorder(1));
+		PogaB.setFocusable(false);
+		PogaB.addActionListener(this);
+		PogaB.setText("B");
+		
+		PogaC.setBounds(0,320,100,100);
+		PogaC.setFont(new Font("Serif",Font.ITALIC,50));
+		PogaC.setBackground(new Color(187,160,190));
+		PogaC.setForeground(new Color(255,255,255));
+		PogaC.setBorder(BorderFactory.createBevelBorder(1));
+		PogaC.setFocusable(false);
+		PogaC.addActionListener(this);
+		PogaC.setText("C");
+		
+		PogaD.setBounds(0,430,100,100);
+		PogaD.setFont(new Font("Serif",Font.ITALIC,50));
+		PogaD.setBackground(new Color(187,160,190));
+		PogaD.setForeground(new Color(255,255,255));
+		PogaD.setBorder(BorderFactory.createBevelBorder(1));
+		PogaD.setFocusable(false);
+		PogaD.addActionListener(this);
+		PogaD.setText("D");
+		
+		
 		
 		frame.add(textfield);
 		frame.add(textarea);
+		frame.add(PogaA);
+		frame.add(PogaB);
+		frame.add(PogaC);
+		frame.add(PogaD);
 		frame.setVisible(true);
 		
 		
