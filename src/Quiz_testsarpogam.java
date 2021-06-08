@@ -63,7 +63,21 @@ public class Quiz_testsarpogam implements ActionListener{
 
 	public Quiz_testsarpogam(){
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800,800);
+		frame.setSize(600,600);
+		frame.getContentPane().setBackground(new Color(187,157,177));
+		frame.setLayout(null);
+		frame.setResizable(false);
+		
+		textfield.setBounds(0,0,600,50);
+		textfield.setBackground(new Color(187,160,190));
+		textfield.setForeground(new Color(255,255,255));
+		textfield.setFont(new Font("Serif",Font.ITALIC,26));
+		textfield.setBorder(BorderFactory.createBevelBorder(1));
+		textfield.setHorizontalAlignment(JTextField.CENTER);
+		textfield.setEditable(false);
+		textfield.setText("Text");
+		
+		frame.add(textfield);
 		frame.setVisible(true);
 		
 		
