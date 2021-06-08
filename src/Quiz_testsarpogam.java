@@ -4,7 +4,7 @@ import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
 	
 		String[] Jautajumi = 	{
-				"Jautajums",
+				"Jautajums...",
 				"Jautajums",
 				"Jautajums",
 				"Jautajums",
@@ -18,16 +18,16 @@ public class Quiz_testsarpogam implements ActionListener{
 			};
 		
 		String[][] Atbildesizvele = 	{
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
-				{"Atbildes"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"},
 			
 			};
 		
@@ -38,7 +38,7 @@ public class Quiz_testsarpogam implements ActionListener{
 				'D'
 			};
 		int sekundes = 20;
-		int rezultats = 0;
+		int rezultats;
 		char atbilde;
 		int index;
 		int minejumi;
@@ -56,7 +56,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		JLabel AtbildeB = new JLabel();
 		JLabel AtbildeC = new JLabel();
 		JLabel AtbildeD = new JLabel();
-		JLabel Laiks = new JLabel();
+		JLabel LogsLaiks = new JLabel();
 		JLabel AtlLaiks = new JLabel();
 		JTextField Numurs = new JTextField();
 		JTextField prc = new JTextField();
@@ -75,7 +75,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
-		textfield.setText("Text");
+		
 		
 		textarea.setBounds(0,50,600,40);
 		textarea.setLineWrap(true);
@@ -85,7 +85,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		textarea.setFont(new Font("Serif",Font.ITALIC,24));
 		textarea.setBorder(BorderFactory.createBevelBorder(1));
 		textarea.setEditable(false);
-		textarea.setText("Jautajumi");
+		
 		
 		PogaA.setBounds(0,100,100,100);
 		PogaA.setFont(new Font("Serif",Font.ITALIC,50));
@@ -127,26 +127,57 @@ public class Quiz_testsarpogam implements ActionListener{
 		AtbildeA.setBackground(new Color(187,160,190));
 		AtbildeA.setForeground(new Color(255,255,255));
 		AtbildeA.setFont(new Font("Serif",Font.ITALIC,30));
-		AtbildeA.setText("Atbilde");
+		
 		
 		AtbildeB.setBounds(110,210,300,100);
 		AtbildeB.setBackground(new Color(187,160,190));
 		AtbildeB.setForeground(new Color(50,50,3));
 		AtbildeB.setFont(new Font("Serif",Font.ITALIC,30));
-		AtbildeB.setText("Atbilde");
+		
 		
 		AtbildeC.setBounds(110,320,300,100);
 		AtbildeC.setBackground(new Color(187,160,190));
 		AtbildeC.setForeground(new Color(255,255,255));
 		AtbildeC.setFont(new Font("Serif",Font.ITALIC,30));
-		AtbildeC.setText("Atbilde");
+		
 		
 		AtbildeD.setBounds(110,430,300,100);
 		AtbildeD.setBackground(new Color(187,160,190));
 		AtbildeD.setForeground(new Color(50,50,3));
 		AtbildeD.setFont(new Font("Serif",Font.ITALIC,30));
-		AtbildeD.setText("Atbilde");
 		
+		
+		
+		AtlLaiks.setBounds(552,95,30,30);
+		AtlLaiks.setBackground(new Color(255,255,255));
+		AtlLaiks.setForeground(new Color(50,50,3));
+		AtlLaiks.setFont(new Font("Serif",Font.ITALIC,15));
+		AtlLaiks.setBorder(BorderFactory.createBevelBorder(1));
+		AtlLaiks.setOpaque(true);
+		AtlLaiks.setHorizontalAlignment(JTextField.CENTER);
+		AtlLaiks.setText(String.valueOf(sekundes));
+		LogsLaiks.setBounds(449,102,100,15);
+		LogsLaiks.setBackground(new Color(187,157,177));
+		LogsLaiks.setForeground(new Color(50,50,3));
+		LogsLaiks.setFont(new Font("Serif",Font.ITALIC,15));
+		LogsLaiks.setHorizontalAlignment(JTextField.LEFT);
+		LogsLaiks.setBorder(BorderFactory.createBevelBorder(4));
+		
+		
+		Numurs.setBounds(200,200,200,100);
+		Numurs.setBackground(new Color(255,255,255));
+		Numurs.setForeground(new Color(25,255,0));
+		Numurs.setFont(new Font("Serif",Font.ITALIC,30));
+		Numurs.setBorder(BorderFactory.createBevelBorder(1));
+		Numurs.setHorizontalAlignment(JTextField.CENTER);
+		Numurs.setEditable(false);
+		prc.setBounds(200,300,200,100);
+		prc.setBackground(new Color(255,255,255));
+		prc.setForeground(new Color(25,255,0));
+		prc.setFont(new Font("Serif",Font.ITALIC,30));
+		prc.setBorder(BorderFactory.createBevelBorder(1));
+		prc.setHorizontalAlignment(JTextField.CENTER);
+		prc.setEditable(false);
 		
 		
 		frame.add(textfield);
@@ -159,11 +190,27 @@ public class Quiz_testsarpogam implements ActionListener{
 		frame.add(AtbildeA);
 		frame.add(AtbildeC);
 		frame.add(AtbildeD);
+		frame.add(LogsLaiks);
+		frame.add(AtlLaiks);
 		frame.setVisible(true);
+		
+		NakamajsJautajums();
 		
 		
 	}
 	public void NakamajsJautajums() {
+		
+		if(index>=KopJauSk) {
+			Rezultats();
+		}
+		else {
+			textfield.setText("	JAUTAJUMS: "+(index+1));
+			textarea.setText(Jautajumi[index]);
+			AtbildeA.setText(Atbildesizvele[index][0]);
+			AtbildeB.setText(Atbildesizvele[index][1]);
+			AtbildeC.setText(Atbildesizvele[index][2]);
+			AtbildeD.setText(Atbildesizvele[index][3]);
+		}
 		
 	}
 	@Override
