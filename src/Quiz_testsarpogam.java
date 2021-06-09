@@ -250,12 +250,41 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 	}
 	public void AtbildesLoga() {
-		
+		PogaA.setEnabled(false);
+		PogaB.setEnabled(false);
+		PogaC.setEnabled(false);
+		PogaD.setEnabled(false);
+
+		if(Atbildes[index] != 'A')
+			AtbildeA.setForeground(new Color(0,0,128));
+		if(Atbildes[index] != 'B')
+			AtbildeB.setForeground(new Color(0,0,128));
+		if(Atbildes[index] != 'C')
+			AtbildeC.setForeground(new Color(0,0,128));
+		if(Atbildes[index] != 'D')
+			AtbildeD.setForeground(new Color(0,0,128));
 		
 	}
 	public void Rezultats() {
-		
-	
+		PogaA.setEnabled(false);
+		PogaB.setEnabled(false);
+		PogaC.setEnabled(false);
+		PogaD.setEnabled(false);
+
+		rezultats = (int)((parizvele/(double)KopJauSk)*100);
+
+		textfield.setText("Rezultats!");
+		textarea.setText("");
+		AtbildeA.setText("");
+		AtbildeB.setText("");
+		AtbildeC.setText("");
+		AtbildeD.setText("");
+
+		Numurs.setText("("+parizvele+"/"+KopJauSk+")");
+		prc.setText(rezultats+"%");
+
+		frame.add(Numurs);
+		frame.add(prc);
 
 }
 }
