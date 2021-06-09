@@ -310,20 +310,19 @@ public class Quiz_testsarpogam implements ActionListener{
 		rezultats = (int)((parizvele/(double)KopJauSk)*100);
 
 		textfield.setText("Rezultats!");
+		textarea.setText("");
 		AtbildeA.setText("");
 		AtbildeB.setText("");
 		AtbildeC.setText("");
 		AtbildeD.setText("");
-		if(rezultats == 5) {
-			textarea.setText("MALACIS!");
-		}
+	
 
 		Numurs.setText("("+parizvele+"/"+KopJauSk+")");
 		prc.setText(rezultats+"%");
 
 		frame.add(Numurs);
 		frame.add(prc);
-		frame.add(textarea);
+	
 
 	}
 }
