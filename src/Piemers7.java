@@ -2,10 +2,11 @@
 public class Piemers7 {
 
 	public static void main(String[] args) {
-		String vards = "eksamens";
-		String vardadala;
-		vardadala = vards.substring(0, 3);
-		System.out.println("Vārda daļa: "+vardadala);
+		String vards1 = "Gruts";
+		String vards2 = "uzdevums!";
+		String rezultats;
+		rezultats = vards1.concat(vards2);		
+		System.out.println("Vārdu savienojums: "+rezultats);
 
 	}
 

@@ -2,11 +2,11 @@
 public class Piemers6 {
 
 	public static void main(String[] args) {
-		String vadri = "Es labi nokartosu eksamenu!";
-		String[] sadalit = vadri.split(" ");
-		for ( int i = 0; i < sadalit.length; i++) {
-			System.out.println(sadalit[i]);
-		}
+		String vards1 = "ProgRammeSana";
+		String vards2 = "eksamens";
+		int salidzinat;
+		salidzinat = vards1.compareToIgnoreCase(vards2);
+		System.out.println("Salīdzinājam divas simbolu virknes vards1 un vards2. Rezultats: "+salidzinat);
 	}
 
 }

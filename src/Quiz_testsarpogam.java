@@ -4,16 +4,12 @@ import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
 	
 		String[] Jautajumi = 	{
-				"Jautajums...",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums",
-				"Jautajums"
+				"Jautajums1",
+				"Jautajums2",
+				"Jautajums3",
+				"Jautajums4",
+				"Jautajums5"
+				
 				
 			};
 		
@@ -22,12 +18,8 @@ public class Quiz_testsarpogam implements ActionListener{
 				{"ATB","ATB","ATB","ATB"},
 				{"ATB","ATB","ATB","ATB"},
 				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
-				{"ATB","ATB","ATB","ATB"},
+				{"ATB","ATB","ATB","ATB"}
+			
 			
 			};
 		
@@ -35,14 +27,15 @@ public class Quiz_testsarpogam implements ActionListener{
 				'A',
 				'B',
 				'C',
+				'D',
 				'D'
 			};
-		int sekundes = 20;
+		int sekundes = 15;
 		int rezultats;
 		char atbilde;
 		int index;
-		int minejumi;
-		int parminejumi;
+		int izvele;
+		int parizvele=0;
 		int KopJauSk = Jautajumi.length;
 		
 		JFrame frame = new JFrame();
@@ -60,6 +53,8 @@ public class Quiz_testsarpogam implements ActionListener{
 		JLabel AtlLaiks = new JLabel();
 		JTextField Numurs = new JTextField();
 		JTextField prc = new JTextField();
+		
+		
 
 	public Quiz_testsarpogam(){
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -162,6 +157,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		LogsLaiks.setFont(new Font("Serif",Font.ITALIC,15));
 		LogsLaiks.setHorizontalAlignment(JTextField.LEFT);
 		LogsLaiks.setBorder(BorderFactory.createBevelBorder(4));
+		LogsLaiks.setText("Atlikuis laiks:");
 		
 		
 		Numurs.setBounds(200,200,200,100);
@@ -210,20 +206,55 @@ public class Quiz_testsarpogam implements ActionListener{
 			AtbildeB.setText(Atbildesizvele[index][1]);
 			AtbildeC.setText(Atbildesizvele[index][2]);
 			AtbildeD.setText(Atbildesizvele[index][3]);
+			
 		}
 		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		PogaA.setEnabled(false);
+		PogaB.setEnabled(false);
+		PogaC.setEnabled(false);
+		PogaD.setEnabled(false);
+		
+		if(e.getSource()==PogaA) {
+			atbilde='A';
+			if(atbilde == Atbildes[index]) {
+				AtbildeA.setForeground(new Color(0,255,255));
+				parizvele++;
+			}
+		}
+		if(e.getSource()==PogaB) {
+			atbilde= 'B';
+			if(atbilde == Atbildes[index]) {
+				AtbildeB.setForeground(new Color(0,255,255));
+				parizvele++;
+			}
+		}
+		if(e.getSource()==PogaC) {
+			atbilde= 'C';
+			if(atbilde == Atbildes[index]) {
+				AtbildeC.setForeground(new Color(0,255,255));
+				parizvele++;
+			}
+		}
+		if(e.getSource()==PogaD) {
+			atbilde= 'D';
+			if(atbilde == Atbildes[index]) {
+				AtbildeD.setForeground(new Color(0,255,255));
+				parizvele++;
+			}
+		}
+		AtbildesLoga();
 		
 	}
-	public void Atbildes() {
+	public void AtbildesLoga() {
 		
 	}
 	public void Rezultats() {
 		
-	}
 	
 
+}
 }
