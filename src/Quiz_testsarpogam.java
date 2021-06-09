@@ -251,6 +251,7 @@ public class Quiz_testsarpogam implements ActionListener{
 	}
 	public void AtbildesLoga() {
 		
+		
 	}
 	public void Rezultats() {
 		
