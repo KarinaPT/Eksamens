@@ -54,6 +54,18 @@ public class Quiz_testsarpogam implements ActionListener{
 		JTextField Numurs = new JTextField();
 		JTextField prc = new JTextField();
 		
+		Timer timer = new Timer(1000, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sekundes--;
+				AtlLaiks.setText(String.valueOf(sekundes));
+				if(sekundes<=0) {
+					AtbildesLoga();
+				}
+				}
+			});
+		
 		
 
 	public Quiz_testsarpogam(){
@@ -160,16 +172,16 @@ public class Quiz_testsarpogam implements ActionListener{
 		LogsLaiks.setText("Atlikuis laiks:");
 		
 		
-		Numurs.setBounds(200,200,200,100);
+		Numurs.setBounds(0,90,585,200);
 		Numurs.setBackground(new Color(255,255,255));
-		Numurs.setForeground(new Color(25,255,0));
+		Numurs.setForeground(new Color(50,50,3));
 		Numurs.setFont(new Font("Serif",Font.ITALIC,30));
 		Numurs.setBorder(BorderFactory.createBevelBorder(1));
 		Numurs.setHorizontalAlignment(JTextField.CENTER);
 		Numurs.setEditable(false);
-		prc.setBounds(200,300,200,100);
+		prc.setBounds(0,290,585,300);
 		prc.setBackground(new Color(255,255,255));
-		prc.setForeground(new Color(25,255,0));
+		prc.setForeground(new Color(50,50,3));
 		prc.setFont(new Font("Serif",Font.ITALIC,30));
 		prc.setBorder(BorderFactory.createBevelBorder(1));
 		prc.setHorizontalAlignment(JTextField.CENTER);
@@ -206,7 +218,7 @@ public class Quiz_testsarpogam implements ActionListener{
 			AtbildeB.setText(Atbildesizvele[index][1]);
 			AtbildeC.setText(Atbildesizvele[index][2]);
 			AtbildeD.setText(Atbildesizvele[index][3]);
-			
+			timer.start();
 		}
 		
 	}
@@ -250,6 +262,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 	}
 	public void AtbildesLoga() {
+		timer.stop();
 		PogaA.setEnabled(false);
 		PogaB.setEnabled(false);
 		PogaC.setEnabled(false);
@@ -264,6 +277,29 @@ public class Quiz_testsarpogam implements ActionListener{
 		if(Atbildes[index] != 'D')
 			AtbildeD.setForeground(new Color(0,0,128));
 		
+		Timer pause = new Timer(1000,new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AtbildeA.setForeground(new Color(50,50,3));
+				AtbildeB.setForeground(new Color(255,255,255));
+				AtbildeC.setForeground(new Color(50,50,3));
+				AtbildeD.setForeground(new Color(255,255,255));
+					
+					atbilde = ' ';
+					sekundes=15;
+					AtlLaiks.setText(String.valueOf(sekundes));
+					PogaA.setEnabled(true);
+					PogaB.setEnabled(true);
+					PogaC.setEnabled(true);
+					PogaD.setEnabled(true);
+					index++;
+					NakamajsJautajums();
+				}
+			});
+		pause.setRepeats(false);
+		pause.start();
+		
 	}
 	public void Rezultats() {
 		PogaA.setEnabled(false);
@@ -274,17 +310,20 @@ public class Quiz_testsarpogam implements ActionListener{
 		rezultats = (int)((parizvele/(double)KopJauSk)*100);
 
 		textfield.setText("Rezultats!");
-		textarea.setText("");
 		AtbildeA.setText("");
 		AtbildeB.setText("");
 		AtbildeC.setText("");
 		AtbildeD.setText("");
+		if(rezultats == 5) {
+			textarea.setText("MALACIS!");
+		}
 
 		Numurs.setText("("+parizvele+"/"+KopJauSk+")");
 		prc.setText(rezultats+"%");
 
 		frame.add(Numurs);
 		frame.add(prc);
+		frame.add(textarea);
 
-}
+	}
 }
