@@ -37,7 +37,6 @@ public class Quiz_testsarpogam implements ActionListener{
 				'B'
 			};
 		int sekundes = 15;
-		int rezultats;
 		char atbilde;
 		int index;
 		int izvele;
@@ -46,19 +45,22 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		JFrame frame = new JFrame();
 		JTextField textfield = new JTextField();
+		JTextField numurs = new JTextField();
+		JTextField prc = new JTextField();
+		JTextField beigas = new JTextField();
 		JTextArea textarea = new JTextArea();
 		JButton pogaA = new JButton();
 		JButton pogaB = new JButton();
 		JButton pogaC = new JButton();
 		JButton pogaD = new JButton();
+		JButton nepareizieRezultati = new JButton();
 		JLabel atbildeA = new JLabel();
 		JLabel atbildeB = new JLabel();
 		JLabel atbildeC = new JLabel();
 		JLabel atbildeD = new JLabel();
 		JLabel logsLaiks = new JLabel();
 		JLabel atlLaiks = new JLabel();
-		JTextField numurs = new JTextField();
-		JTextField prc = new JTextField();
+		
 		
 		Timer timer = new Timer(1000, new ActionListener() {
 			
@@ -89,7 +91,14 @@ public class Quiz_testsarpogam implements ActionListener{
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
 		
-		
+		beigas.setBounds(0,50,750,50);
+		beigas.setBackground(new Color(187,160,190));
+		beigas.setForeground(new Color(255,255,255));
+		beigas.setFont(new Font("Serif",Font.ITALIC,26));
+		beigas.setBorder(BorderFactory.createBevelBorder(1));
+		beigas.setHorizontalAlignment(JTextField.CENTER);
+		beigas.setEditable(false);
+			
 		textarea.setBounds(0,50,750,250);
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
@@ -99,7 +108,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		textarea.setBorder(BorderFactory.createBevelBorder(1));
 		textarea.setEditable(false);
 		
-		
+			
 		pogaA.setBounds(0,310,100,100);
 		pogaA.setFont(new Font("Serif",Font.ITALIC,50));
 		pogaA.setBackground(new Color(187,160,190));
@@ -136,30 +145,37 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaD.addActionListener(this);
 		pogaD.setText("D");
 		
+		nepareizieRezultati.setBounds(255,635,100,100);
+		nepareizieRezultati.setFont(new Font("Serif",Font.ITALIC,16));
+		nepareizieRezultati.setBackground(new Color(33,232,19));
+		nepareizieRezultati.setForeground(new Color(25,25,25));
+		nepareizieRezultati.setBorder(BorderFactory.createBevelBorder(1));
+		nepareizieRezultati.setFocusable(false);
+		nepareizieRezultati.addActionListener(this);
+		nepareizieRezultati.setSize(200, 50);
+		nepareizieRezultati.setText("Show wrong answers");
+		
+		
+		
 		atbildeA.setBounds(110,305,750,100);
 		atbildeA.setBackground(new Color(187,160,190));
 		atbildeA.setForeground(new Color(255,255,255));
-		atbildeA.setFont(new Font("Serif",Font.ITALIC,30));
-		
+		atbildeA.setFont(new Font("Serif",Font.ITALIC,30));		
 		
 		atbildeB.setBounds(110,415,750,100);
 		atbildeB.setBackground(new Color(187,160,190));
 		atbildeB.setForeground(new Color(50,50,3));
 		atbildeB.setFont(new Font("Serif",Font.ITALIC,30));
-	
 		
 		atbildeC.setBounds(110,525,750,100);
 		atbildeC.setBackground(new Color(187,160,190));
 		atbildeC.setForeground(new Color(255,255,255));
 		atbildeC.setFont(new Font("Serif",Font.ITALIC,30));
 		
-		
 		atbildeD.setBounds(110,635,750,100);
 		atbildeD.setBackground(new Color(187,160,190));
 		atbildeD.setForeground(new Color(50,50,3));
 		atbildeD.setFont(new Font("Serif",Font.ITALIC,30));
-		
-		
 		
 		atlLaiks.setBounds(660,725,60,60);
 		atlLaiks.setBackground(new Color(187,160,200));
@@ -175,24 +191,15 @@ public class Quiz_testsarpogam implements ActionListener{
 		logsLaiks.setFont(new Font("Serif",Font.ITALIC,15));
 		logsLaiks.setHorizontalAlignment(JTextField.LEFT);
 		logsLaiks.setBorder(BorderFactory.createBevelBorder(4));
-		logsLaiks.setText("Atlikuis laiks:");
+		logsLaiks.setText("Atlikuis laiks:");		
 		
-		
-		numurs.setBounds(0,90,585,200);
-		numurs.setBackground(new Color(255,255,255));
+		numurs.setBounds(0,250,600,550);
+		numurs.setBackground(new Color(187,160,190));
 		numurs.setForeground(new Color(50,50,3));
 		numurs.setFont(new Font("Serif",Font.ITALIC,30));
-		numurs.setBorder(BorderFactory.createBevelBorder(1));
+		numurs.setBorder(BorderFactory.createBevelBorder(4));
 		numurs.setHorizontalAlignment(JTextField.CENTER);
 		numurs.setEditable(false);
-		prc.setBounds(0,290,585,300);
-		prc.setBackground(new Color(255,255,255));
-		prc.setForeground(new Color(50,50,3));
-		prc.setFont(new Font("Serif",Font.ITALIC,30));
-		prc.setBorder(BorderFactory.createBevelBorder(1));
-		prc.setHorizontalAlignment(JTextField.CENTER);
-		prc.setEditable(false);
-		
 		
 		frame.add(textfield);
 		frame.add(textarea);
@@ -313,8 +320,6 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaC.setEnabled(false);
 		pogaD.setEnabled(false);
 
-		rezultats = (int)((parizvele/(double)kopJauSk)*100);
-
 		textfield.setText("Rezultats!");
 		textarea.setText("");
 		atbildeA.setText("");
@@ -322,12 +327,16 @@ public class Quiz_testsarpogam implements ActionListener{
 		atbildeC.setText("");
 		atbildeD.setText("");
 	
+		if(parizvele <= 10 || parizvele >=4) {
+			beigas.setText("Malacis!");
+		}
 
 		numurs.setText("("+parizvele+"/"+kopJauSk+")");
-		prc.setText(rezultats+"%");
-
+		frame.add(nepareizieRezultati);
 		frame.add(numurs);
-		frame.add(prc);
+		frame.add(beigas);
+		
+		
 	
 
 	}
