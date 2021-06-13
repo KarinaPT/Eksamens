@@ -31,7 +31,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		HashMap<String, String> nepareizasAtbildes = new HashMap<String, String>(); 
 		public void pievienotNepareizoAtbildi(String question, String wrongAnswer) { 
-			
+			nepareizasAtbildes.put(question, wrongAnswer);
 		}
 		
 		
