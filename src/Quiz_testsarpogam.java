@@ -1,5 +1,6 @@
 import java.awt.event.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.awt.*;
 import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
@@ -8,7 +9,7 @@ public class Quiz_testsarpogam implements ActionListener{
 				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"900\" \n String b = \"100\" \n String c; \n c= b+a\"",
 				"Kura metode nosaka garumu (Simbolu skaitu virknē)?",
 				"Ko dara metode - toUpperCase();",
-				"Metodē - chatAt(); indeksa numurs sākas no: ",
+				"Metodē - charAt(); indeksa numurs sākas no: ",
 				"Kura metode salīdzina simbolu virknes?",
 				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"eksamens\" \n String b; \n b=a.substring(1,3)",
 				
@@ -50,25 +51,26 @@ public class Quiz_testsarpogam implements ActionListener{
 		int parizvele=0;
 		int kopJauSk = Jautajumi.length;
 		
-		JFrame frame = new JFrame();
 		JFrame resultFrame = new JFrame();
 		JTextArea resultField = new JTextArea();
+		JTextArea textarea = new JTextArea();
+		JFrame frame = new JFrame();
 		JTextField textfield = new JTextField();
 		JTextField numurs = new JTextField();
 		JTextField prc = new JTextField();
 		JTextField beigas = new JTextField();
-		JTextArea textarea = new JTextArea();
 		JButton pogaA = new JButton();
 		JButton pogaB = new JButton();
 		JButton pogaC = new JButton();
 		JButton pogaD = new JButton();
-		JButton nepareizieRezultati = new JButton();
 		JLabel atbildeA = new JLabel();
 		JLabel atbildeB = new JLabel();
 		JLabel atbildeC = new JLabel();
 		JLabel atbildeD = new JLabel();
 		JLabel logsLaiks = new JLabel();
 		JLabel atlLaiks = new JLabel();
+		
+		JButton nepareizieRezultati = new JButton();
 		
 		
 		Timer timer = new Timer(1000, new ActionListener() {
@@ -105,14 +107,6 @@ public class Quiz_testsarpogam implements ActionListener{
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
-		
-		resultField.setBounds(0,90,585,200);
-		resultField.setBackground(new Color(255,255,255));
-		resultField.setForeground(new Color(50,50,3));
-		resultField.setFont(new Font("Serif",Font.ITALIC,14));
-		resultField.setBorder(BorderFactory.createBevelBorder(1));
-		resultField.setEditable(false);
-		resultField.setSize(700, 600);
 		
 		beigas.setBounds(0,50,750,50);
 		beigas.setBackground(new Color(187,160,190));
@@ -168,7 +162,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaD.addActionListener(this);
 		pogaD.setText("D");
 		
-		nepareizieRezultati.setBounds(255,635,100,100);
+		nepareizieRezultati.setBounds(0,640,100,100);
 		nepareizieRezultati.setFont(new Font("Serif",Font.ITALIC,16));
 		nepareizieRezultati.setBackground(new Color(33,232,19));
 		nepareizieRezultati.setForeground(new Color(25,25,25));
@@ -214,7 +208,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		logsLaiks.setBorder(BorderFactory.createBevelBorder(4));
 		logsLaiks.setText("Atlikuis laiks:");		
 		
-		numurs.setBounds(0,250,600,550);
+		numurs.setBounds(0,90,585,200);
 		numurs.setBackground(new Color(187,160,190));
 		numurs.setForeground(new Color(50,50,3));
 		numurs.setFont(new Font("Serif",Font.ITALIC,30));
@@ -222,7 +216,16 @@ public class Quiz_testsarpogam implements ActionListener{
 		numurs.setHorizontalAlignment(JTextField.CENTER);
 		numurs.setEditable(false);
 		
+		resultField.setBounds(0,90,585,200);
+		resultField.setBackground(new Color(255,255,255));
+		resultField.setForeground(new Color(50,50,3));
+		resultField.setFont(new Font("Serif",Font.ITALIC,14));
+		resultField.setBorder(BorderFactory.createBevelBorder(1));
+		resultField.setEditable(false);
+		resultField.setSize(700, 600);
+		
 		resultFrame.add(resultField);
+		
 		frame.add(textfield);
 		frame.add(textarea);
 		frame.add(pogaA);
@@ -264,12 +267,15 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaB.setEnabled(false);
 		pogaC.setEnabled(false);
 		pogaD.setEnabled(false);
+		String s =String.valueOf(index);
 		
 		if(e.getSource()==pogaA) {
 			atbilde='A';
 			if(atbilde == Atbildes[index]) {
 				atbildeA.setForeground(new Color(0,255,255));
 				parizvele++;
+			}else {
+				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][0] ); 
 			}
 		}
 		if(e.getSource()==pogaB) {
@@ -277,6 +283,8 @@ public class Quiz_testsarpogam implements ActionListener{
 			if(atbilde == Atbildes[index]) {
 				atbildeB.setForeground(new Color(0,255,255));
 				parizvele++;
+			}else {
+				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][1] ); 
 			}
 		}
 		if(e.getSource()==pogaC) {
@@ -284,6 +292,8 @@ public class Quiz_testsarpogam implements ActionListener{
 			if(atbilde == Atbildes[index]) {
 				atbildeC.setForeground(new Color(0,255,255));
 				parizvele++;
+			}else {
+				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][2] ); 
 			}
 		}
 		if(e.getSource()==pogaD) {
@@ -291,8 +301,11 @@ public class Quiz_testsarpogam implements ActionListener{
 			if(atbilde == Atbildes[index]) {
 				atbildeD.setForeground(new Color(0,255,255));
 				parizvele++;
+			}else {
+				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][3] ); 
 			}
 		}
+		
 		AtbildesLoga();
 		
 	}
