@@ -305,6 +305,19 @@ public class Quiz_testsarpogam implements ActionListener{
 				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][3] ); 
 			}
 		}
+		if(e.getSource() == nepareizieRezultati) { 
+			 resultField.append("Nepareizas atbildes"+"\n");
+			 resultField.append(""+"\n");
+				for (Map.Entry entry : nepareizasAtbildes.entrySet()) 
+			{
+			    resultField.append("Jautajums: " + entry.getKey()+ "\n" );
+			    resultField.append("Atbilde: " + entry.getValue()+ "\n" );
+			   
+			}
+			
+			resultFrame.setVisible(true);
+			return;
+		}
 		
 		AtbildesLoga();
 		
