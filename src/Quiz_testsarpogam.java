@@ -44,6 +44,8 @@ public class Quiz_testsarpogam implements ActionListener{
 		int kopJauSk = Jautajumi.length;
 		
 		JFrame frame = new JFrame();
+		JFrame resultFrame = new JFrame();
+		JTextArea resultField = new JTextArea();
 		JTextField textfield = new JTextField();
 		JTextField numurs = new JTextField();
 		JTextField prc = new JTextField();
@@ -83,6 +85,12 @@ public class Quiz_testsarpogam implements ActionListener{
 		frame.setLayout(null);
 		frame.setResizable(false);
 		
+		resultFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		resultFrame.setSize(750,830);
+		resultFrame.getContentPane().setBackground(new Color(187,157,177));
+		resultFrame.setLayout(null);
+		resultFrame.setResizable(false);
+		
 		textfield.setBounds(0,0,750,50);
 		textfield.setBackground(new Color(187,160,200));
 		textfield.setForeground(new Color(50,50,3));
@@ -90,6 +98,14 @@ public class Quiz_testsarpogam implements ActionListener{
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
+		
+		resultField.setBounds(0,90,585,200);
+		resultField.setBackground(new Color(255,255,255));
+		resultField.setForeground(new Color(50,50,3));
+		resultField.setFont(new Font("Serif",Font.ITALIC,14));
+		resultField.setBorder(BorderFactory.createBevelBorder(1));
+		resultField.setEditable(false);
+		resultField.setSize(700, 600);
 		
 		beigas.setBounds(0,50,750,50);
 		beigas.setBackground(new Color(187,160,190));
@@ -201,6 +217,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		numurs.setHorizontalAlignment(JTextField.CENTER);
 		numurs.setEditable(false);
 		
+		resultFrame.add(resultField);
 		frame.add(textfield);
 		frame.add(textarea);
 		frame.add(pogaA);
@@ -335,6 +352,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		frame.add(nepareizieRezultati);
 		frame.add(numurs);
 		frame.add(beigas);
+		
 		
 		
 	
