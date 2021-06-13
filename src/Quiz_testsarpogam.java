@@ -1,4 +1,5 @@
 import java.awt.event.*;
+import java.util.HashMap;
 import java.awt.*;
 import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
@@ -27,6 +28,9 @@ public class Quiz_testsarpogam implements ActionListener{
 			
 			
 			};
+		
+		HashMap<String, String> nepareizasAtbildes = new HashMap<String, String>(); 
+		
 		
 		char[] Atbildes = 		{
 				'B',
@@ -169,9 +173,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		nepareizieRezultati.setFocusable(false);
 		nepareizieRezultati.addActionListener(this);
 		nepareizieRezultati.setSize(200, 50);
-		nepareizieRezultati.setText("Show wrong answers");
-		
-		
+		nepareizieRezultati.setText("Nep.Atb");
 		
 		atbildeA.setBounds(110,305,750,100);
 		atbildeA.setBackground(new Color(187,160,190));
