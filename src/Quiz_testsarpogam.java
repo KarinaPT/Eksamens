@@ -6,14 +6,16 @@ import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
 	
 		String[] Jautajumi = 	{
-				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"900\" \n String b = \"100\" \n String c; \n c= b+a\"",
+				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"900\"; \n String b = \"100\"; \n String c; \n c= b+a;",
 				"Kura metode nosaka garumu (Simbolu skaitu virknē)?",
 				"Ko dara metode - toUpperCase();",
 				"Metodē - charAt(); indeksa numurs sākas no: ",
 				"Kura metode salīdzina simbolu virknes?",
-				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"eksamens\" \n String b; \n b=a.substring(1,3)",
-				
-				
+				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"eksamens\"; \n String b; \n b=a.substring(1,3);",
+				"Kura metode apvieno simbolu virknes?",
+				"Kura metode pārbauda vai virkne satur citu virkni?",
+				"Pabeidz teikumu: \n char tipam atbilst viens Unicode simbols, kas atmiņā aizņem ...",
+				"Kura metode salīdzina divas simbolu virknes un neņem vērā burtu lielumu",
 			};
 		
 		String[][] Atbildesizvele = 	{
@@ -25,9 +27,11 @@ public class Quiz_testsarpogam implements ActionListener{
 				 "Šī metode nav"},
 				{"1","2","0","1,5"},
 				{"concat();","charAt();","split();","equals();"},
-				{"eks","ks","ksa","eksa"}
-			
-			
+				{"eks","ks","ksa","eksa"},
+				{"compareToIngoreCase();","compareTo();","concat();","equalsIngoreCase ();"},
+				{"toLowerCase();","toCharArray();","contains();","length();"},
+				{"16 bitus (2 baitus)","24 bitus (4 baitus)","12 bitus (4 baitus)","14 bitus (2 baitus)"},
+				{"toUpperCase();","toLowerCase();","compareTo();","compareToIngoreCase();"}
 			};
 		
 		HashMap<String, String> nepareizasAtbildes = new HashMap<String, String>(); 
@@ -42,7 +46,11 @@ public class Quiz_testsarpogam implements ActionListener{
 				'B',
 				'C',
 				'D',
-				'B'
+				'B',
+				'C',
+				'C',
+				'A',
+				'D'
 			};
 		int sekundes = 15;
 		char atbilde;
@@ -110,7 +118,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		beigas.setBounds(0,50,750,50);
 		beigas.setBackground(new Color(187,160,190));
-		beigas.setForeground(new Color(255,255,255));
+		beigas.setForeground(new Color(0,255,255));
 		beigas.setFont(new Font("Serif",Font.ITALIC,26));
 		beigas.setBorder(BorderFactory.createBevelBorder(1));
 		beigas.setHorizontalAlignment(JTextField.CENTER);
@@ -162,15 +170,15 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaD.addActionListener(this);
 		pogaD.setText("D");
 		
-		nepareizieRezultati.setBounds(0,640,100,100);
+		nepareizieRezultati.setBounds(175,640,300,100);
 		nepareizieRezultati.setFont(new Font("Serif",Font.ITALIC,16));
-		nepareizieRezultati.setBackground(new Color(33,232,19));
-		nepareizieRezultati.setForeground(new Color(25,25,25));
+		nepareizieRezultati.setBackground(new Color(0,255,255));
+		nepareizieRezultati.setForeground(new Color(255,0,255));
 		nepareizieRezultati.setBorder(BorderFactory.createBevelBorder(1));
 		nepareizieRezultati.setFocusable(false);
 		nepareizieRezultati.addActionListener(this);
-		nepareizieRezultati.setSize(200, 50);
-		nepareizieRezultati.setText("Nep.Atb");
+		nepareizieRezultati.setSize(400, 50);
+		nepareizieRezultati.setText("Skatīt nepareizās atbildes!");
 		
 		atbildeA.setBounds(110,305,750,100);
 		atbildeA.setBackground(new Color(187,160,190));
@@ -192,23 +200,23 @@ public class Quiz_testsarpogam implements ActionListener{
 		atbildeD.setForeground(new Color(50,50,3));
 		atbildeD.setFont(new Font("Serif",Font.ITALIC,30));
 		
-		atlLaiks.setBounds(660,725,60,60);
+		atlLaiks.setBounds(654,725,60,60);
 		atlLaiks.setBackground(new Color(187,160,200));
-		atlLaiks.setForeground(new Color(50,50,3));
+		atlLaiks.setForeground(new Color(0,255,255));
 		atlLaiks.setFont(new Font("Serif, Bolt",Font.ITALIC,15));
 		atlLaiks.setBorder(BorderFactory.createBevelBorder(2));
 		atlLaiks.setOpaque(true);
 		atlLaiks.setHorizontalAlignment(JTextField.CENTER);
 		atlLaiks.setText(String.valueOf(sekundes));
-		logsLaiks.setBounds(650,700,100,15);
+		logsLaiks.setBounds(636,700,100,15);
 		logsLaiks.setBackground(new Color(187,157,177));
-		logsLaiks.setForeground(new Color(50,50,3));
+		logsLaiks.setForeground(new Color(0,255,255));
 		logsLaiks.setFont(new Font("Serif",Font.ITALIC,15));
 		logsLaiks.setHorizontalAlignment(JTextField.LEFT);
 		logsLaiks.setBorder(BorderFactory.createBevelBorder(4));
-		logsLaiks.setText("Atlikuis laiks:");		
+		logsLaiks.setText("Atlikušais laiks:");		
 		
-		numurs.setBounds(0,90,585,200);
+		numurs.setBounds(0,90,750,530);
 		numurs.setBackground(new Color(187,157,177));
 		numurs.setForeground(new Color(50,50,3));
 		numurs.setFont(new Font("Serif",Font.ITALIC,30));
@@ -250,7 +258,7 @@ public class Quiz_testsarpogam implements ActionListener{
 			Rezultats();
 		}
 		else {
-			textfield.setText("Jautajums No:"+(index+1));
+			textfield.setText("------Jautājums No:"+(index+1)+"------");
 			textarea.setText(Jautajumi[index]);
 			atbildeA.setText(Atbildesizvele[index][0]);
 			atbildeB.setText(Atbildesizvele[index][1]);
@@ -307,11 +315,11 @@ public class Quiz_testsarpogam implements ActionListener{
 			}
 		}
 		if(e.getSource() == nepareizieRezultati) { 
-			 resultField.append("Nepareizas atbildes"+"\n");
+			 resultField.append("Nepareizās atbildes"+"\n");
 			 resultField.append("========================================================================"+"\n");
 				for (Map.Entry entry : nepareizasAtbildes.entrySet()) 
 			{
-			    resultField.append("Jautajums: " + entry.getKey()+ "\n" );
+			    resultField.append("Jautājums: " + entry.getKey()+ "\n" );
 			    resultField.append("Atbilde: " + entry.getValue()+ "\n" );
 			    resultField.append("------------------------------------------------------------------------------------------------------------------------------------------------------"+"\n");
 			   
@@ -370,7 +378,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaC.setEnabled(false);
 		pogaD.setEnabled(false);
 
-		textfield.setText("Rezultats!");
+		textfield.setText("Rezultāts!");
 		textarea.setText("");
 		atbildeA.setText("");
 		atbildeB.setText("");
@@ -381,10 +389,9 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaB.setVisible(false);
 		pogaC.setVisible(false);
 		pogaD.setVisible(false);
-	
-		if(parizvele <= 10 || parizvele >=4) {
-			beigas.setText("Malacis!");
-		}
+		atlLaiks.setVisible(false);
+		logsLaiks.setVisible(false);
+		
 
 		numurs.setText("("+parizvele+"/"+kopJauSk+")");
 		frame.add(nepareizieRezultati);
