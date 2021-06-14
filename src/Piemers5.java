@@ -2,12 +2,13 @@
 public class Piemers5 {
 	
 	public static void main(String[] args) {
-		String vards1 = "Kontroldarbs";
-		String vards2 = "Eksamens";
-		int rezultats;
-		rezultats = vards1.compareTo(vards2);
-		System.out.println("Salīdzinājam divas simbolu virknes vards1 un vards2. Resazultats: "+rezultats);
-		
+		//definē mainīgos
+		String vards = "eksamens";
+		String mazieburti;
+		//maina visus burtus uz mazajiem
+		mazieburti = vards.toLowerCase();
+		//izvada ekrānā paziņojumu ar vārdu "eksāmens" ar maziem burtiem
+		System.out.println("Mūsu vārds ar maziem burtiem: "+mazieburti);	
 	}
 
 }
