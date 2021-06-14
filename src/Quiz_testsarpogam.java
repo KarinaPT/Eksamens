@@ -209,20 +209,20 @@ public class Quiz_testsarpogam implements ActionListener{
 		logsLaiks.setText("Atlikuis laiks:");		
 		
 		numurs.setBounds(0,90,585,200);
-		numurs.setBackground(new Color(187,160,190));
+		numurs.setBackground(new Color(187,157,177));
 		numurs.setForeground(new Color(50,50,3));
 		numurs.setFont(new Font("Serif",Font.ITALIC,30));
 		numurs.setBorder(BorderFactory.createBevelBorder(4));
 		numurs.setHorizontalAlignment(JTextField.CENTER);
 		numurs.setEditable(false);
 		
-		resultField.setBounds(0,90,585,200);
+		resultField.setBounds(20,55,1000,680);
 		resultField.setBackground(new Color(255,255,255));
 		resultField.setForeground(new Color(50,50,3));
 		resultField.setFont(new Font("Serif",Font.ITALIC,14));
 		resultField.setBorder(BorderFactory.createBevelBorder(1));
 		resultField.setEditable(false);
-		resultField.setSize(700, 600);
+		resultField.setSize(690, 680);
 		
 		resultFrame.add(resultField);
 		
@@ -267,6 +267,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		pogaB.setEnabled(false);
 		pogaC.setEnabled(false);
 		pogaD.setEnabled(false);
+		
 		String s =String.valueOf(index);
 		
 		if(e.getSource()==pogaA) {
@@ -307,11 +308,12 @@ public class Quiz_testsarpogam implements ActionListener{
 		}
 		if(e.getSource() == nepareizieRezultati) { 
 			 resultField.append("Nepareizas atbildes"+"\n");
-			 resultField.append(""+"\n");
+			 resultField.append("========================================================================"+"\n");
 				for (Map.Entry entry : nepareizasAtbildes.entrySet()) 
 			{
 			    resultField.append("Jautajums: " + entry.getKey()+ "\n" );
 			    resultField.append("Atbilde: " + entry.getValue()+ "\n" );
+			    resultField.append("------------------------------------------------------------------------------------------------------------------------------------------------------"+"\n");
 			   
 			}
 			
@@ -374,6 +376,11 @@ public class Quiz_testsarpogam implements ActionListener{
 		atbildeB.setText("");
 		atbildeC.setText("");
 		atbildeD.setText("");
+		
+		pogaA.setVisible(false);
+		pogaB.setVisible(false);
+		pogaC.setVisible(false);
+		pogaD.setVisible(false);
 	
 		if(parizvele <= 10 || parizvele >=4) {
 			beigas.setText("Malacis!");
