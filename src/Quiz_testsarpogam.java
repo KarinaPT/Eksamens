@@ -227,7 +227,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		resultField.setBounds(20,55,1000,680);
 		resultField.setBackground(new Color(255,255,255));
 		resultField.setForeground(new Color(50,50,3));
-		resultField.setFont(new Font("Serif",Font.ITALIC,14));
+		resultField.setFont(new Font("Serif",Font.ITALIC,10));
 		resultField.setBorder(BorderFactory.createBevelBorder(1));
 		resultField.setEditable(false);
 		resultField.setSize(690, 680);
