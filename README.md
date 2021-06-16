@@ -1,6 +1,6 @@
 # Eksāmens
 
-### Eksāmena uzdevumi:
+### *:clipboard: Eksāmena uzdevumi *:clipboard:
 - [x] Izstrādāt informatīvu mācību materiālu par izvēlēto tēmu, kas satur teorijas izklāstu, kurš
 papildināts ar nepieciešamajiem attēliem un vismaz 5 programmu kodiem, to rindu
 skaidrojumiem. Iekļaut atsauces uz izmantotajiem informācijas avotiem;
