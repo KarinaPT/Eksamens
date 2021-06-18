@@ -18,6 +18,9 @@ public class Quiz_testsarpogam implements ActionListener{
 				"Kura metode salīdzina divas simbolu virknes un neņem vērā burtu lielumu",
 			};
 		
+		
+		
+		
 		String[][] Atbildesizvele = 	{
 				{"1000","900100","100900","910"},
 				{"length();","concat();","contains();","equals();"},
