@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Quiz_testsarpogam implements ActionListener{
 	
 		String[] Jautajumi = 	{
-				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"900\"; \n String b = \"100\"; \n String c; \n c= b+a;",
+				"Kāda būs mainīgā \"c\" vērtības pēc dotā programmas fragmenta izpildes? \n String a = \"900\"; \n String b = \"100\"; \n String c; \n c= a+b;",
 				"Kura metode nosaka garumu (Simbolu skaitu virknē)?",
 				"Ko dara metode - toUpperCase();",
 				"Metodē - charAt(); indeksa numurs sākas no: ",
@@ -80,7 +80,6 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		JButton nepareizieRezultati = new JButton();
 		
-		
 		Timer timer = new Timer(1000, new ActionListener() {
 			
 			@Override
@@ -92,8 +91,6 @@ public class Quiz_testsarpogam implements ActionListener{
 				}
 				}
 			});
-		
-		
 
 	public Quiz_testsarpogam(){
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,8 +129,7 @@ public class Quiz_testsarpogam implements ActionListener{
 		textarea.setFont(new Font("Serif, Bolt",Font.ITALIC,24));
 		textarea.setBorder(BorderFactory.createBevelBorder(1));
 		textarea.setEditable(false);
-		
-			
+				
 		pogaA.setBounds(0,310,100,100);
 		pogaA.setFont(new Font("Serif",Font.ITALIC,50));
 		pogaA.setBackground(new Color(187,160,190));
@@ -250,7 +246,6 @@ public class Quiz_testsarpogam implements ActionListener{
 		
 		NakamajsJautajums();
 		
-		
 	}
 	public void NakamajsJautajums() {
 		
@@ -285,6 +280,10 @@ public class Quiz_testsarpogam implements ActionListener{
 				parizvele++;
 			}else {
 				pievienotNepareizoAtbildi(Jautajumi[index], Atbildesizvele[index][0] ); 
+				//Ja nosacījums if (atbilde == atbildes [index]) nav patiess, tiks izpildīts pārējais nosacījums, 
+				//kas izsauc funkciju AddNepareizoAtbild, kur parametri tiek nodoti jautajumi[index] un atbildesizvele[index][0] - lietotāja izvēlētā atbilde
+				//5) šādā veidā jautājums un nepareiza atbilde tiek saglabāti HashMap<String, String> nepareizasAtbildes.
+
 			}
 		}
 		if(e.getSource()==pogaB) {
@@ -392,15 +391,9 @@ public class Quiz_testsarpogam implements ActionListener{
 		atlLaiks.setVisible(false);
 		logsLaiks.setVisible(false);
 		
-
 		numurs.setText("("+parizvele+"/"+kopJauSk+")");
 		frame.add(nepareizieRezultati);
 		frame.add(numurs);
 		frame.add(beigas);
-		
-		
-		
-	
-
 	}
 }
